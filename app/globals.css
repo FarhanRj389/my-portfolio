@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --accent: #facc15; --background: #0a0a0a; --foreground: #f7f7f2; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-inter), sans-serif; }
+.font-display { font-family: var(--font-space), sans-serif; }
+::selection { background: var(--accent); color: #0a0a0a; }
+.grid-bg { background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 64px 64px; }
+.noise::after { content: ''; position: fixed; inset: 0; pointer-events: none; opacity: .035; z-index: 50; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E"); }
+.glass { background: rgba(18,18,18,.72); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.1); }
+.light .glass { background: rgba(255,255,255,.78); border-color: rgba(0,0,0,.1); }
+.glow { box-shadow: 0 0 0 1px rgba(250,204,21,.15), 0 20px 80px rgba(250,204,21,.1); }
+.input { margin-top: 10px; width: 100%; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; background: rgba(255,255,255,.04); padding: 14px 16px; color: #fff; outline: none; transition: border-color .2s, background .2s; font-size: 14px; font-weight: 400; letter-spacing: normal; text-transform: none; }
+.input::placeholder { color: #52525b; }
+.input:focus { border-color: var(--accent); background: rgba(250,204,21,.04); }
+.light { --background: #f7f7f2; --foreground: #111; }
+.light body { background: #f7f7f2; color: #111; }
+.light main { color: #18181b; }
+.light .text-white { color: #111 !important; }
+.light .text-zinc-100, .light .text-zinc-200, .light .text-zinc-300 { color: #27272a !important; }
+.light .text-zinc-400 { color: #52525b !important; }
+.light .border-white\/10 { border-color: rgba(0,0,0,.12) !important; }
+.light .bg-zinc-950\/80 { background: rgba(247,247,242,.85); }
+.light .bg-zinc-900\/60, .light .bg-white\/\[\.03\] { background: rgba(0,0,0,.035); }
+.light .input { color: #111; border-color: rgba(0,0,0,.15); background: rgba(0,0,0,.04); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
